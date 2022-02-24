@@ -2,7 +2,7 @@
 <launch>
   <arg name="rate" default="50" />
 
-  <!-- Position / trajectory tracking -->
-  <node name="screencap" pkg="screencap" type="screencap" output="screen" clear_params="true" />
-
+  <node name="screencap" pkg="screencap" type="node" output="screen" clear_params="true">
+    <param name="rate" value="$(arg rate)" />
+  </node>
 </launch>

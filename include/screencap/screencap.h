@@ -10,32 +10,27 @@
 
 #include <ros/ros.h>
 
+class ScreenCap
+{
+public:
+  ScreenCap();
+  ~ScreenCap();
+  void operator() (cv::Mat& img);
 
-#include <screencap/screencap.h>
+private:
+  ros::NodeHandle nh_, nhp_;
+  ros::Publisher pub;
 
-namespace screencap {
+  Display* display;
+  Window root;
+  XWindowAttributes window_attributes;
+  Screen* screen;
+  XImage* ximg;
+  XShmSegmentInfo shminfo;
+  uint x = 0;
+  uint y = 0;
+  uint width = 1920;
+  uint height = 1080;
 
-  class OuterLoopROS
-  {
-  public:
-    ScreenCap(const ros::NodeHandle& nh, const ros::NodeHandle& nhp);
-    ~ScreenCap();
-    void operator() (cv::Mat& img);
-
-  private:
-    ros::NodeHandle nh_, nhp_;
-    ros::Publisher pub;
-
-    Display* display;
-    Window root;
-    XWindowAttributes window_attributes;
-    Screen* screen;
-    XImage* ximg;
-    XShmSegmentInfo shminfo;
-
-    int x, y, width, height;
-
-    bool init;
-  };
-
-}
+  bool init;
+};
