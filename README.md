@@ -10,13 +10,13 @@ Screencap is a ROS node that captures the output of your screen and outputs it a
 
 # Multiple Screens
 
-The default settings is to capture the top left 1920x1080 pixels of your display arrangement. I'm not certain how to change this and I don't need it yet so figure it out yourself. 
+The default settings is to capture the top left 1920x1080 pixels of your display arrangement. I'm not certain how to change this and I don't need to yet so figure it out yourself. 
 
 # Performance
 
-I'm using a Ryzen 7 2600X with 64Gb DDR4-3200 cl 16 and a RX 6800XT. The max I can get is about 84 fps but I'm bad at C++ so this number can probably improve.
+I'm using a Ryzen 7 5900X with 64Gb DDR4-3600 cl18 and a RX 6800XT. The max I can get is about 84 fps but I'm bad at C++ so this number can probably improve.
 
-# Citations
+# Acknowledgements
 
 The source code for this node is mostly derived from `scripts/screencap.cpp`. This script is directly copy and pasted from a stack overflow thread found [here](https://stackoverflow.com/a/39781697). This script can be compiled and ran with
 
