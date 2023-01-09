@@ -8,8 +8,6 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
-#include <ros/ros.h>
-
 class ScreenCap
 {
   public:
@@ -18,9 +16,6 @@ class ScreenCap
     void operator() (cv::Mat& img);
 
   private:
-    ros::NodeHandle nh_, nhp_;
-    ros::Publisher pub;
-
     Display* display;
     Window root;
     XWindowAttributes window_attributes;
